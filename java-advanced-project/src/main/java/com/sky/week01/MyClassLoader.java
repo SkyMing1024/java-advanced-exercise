@@ -19,6 +19,7 @@ public class MyClassLoader extends ClassLoader{
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         byte[] newByte = new byte[0];
         try {
+            // 读取resources目录下文件
             byte[] bytes = FileUtil.toByteArray("asset/Hello.xlass");
             newByte = new byte[bytes.length];
             // 获取原始字节码
