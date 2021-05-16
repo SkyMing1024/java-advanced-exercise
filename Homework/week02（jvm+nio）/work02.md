@@ -20,9 +20,11 @@
 **2.（选做）**使用压测工具（wrk 或 sb），演练 gateway-server-0.0.1-SNAPSHOT.jar 示例。
 
 ~~~xml
+wrk -c 40 -d30s http://localhost:8081
+
 wrk命令行参数
 -t 线程数量
--c 保持的连接数
+-c 连接数
 -d 延迟时间
 –timeout 超时时间
 ~~~
