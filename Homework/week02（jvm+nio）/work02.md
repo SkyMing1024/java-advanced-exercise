@@ -40,3 +40,50 @@ wrk命令行参数
 **5.（选做）**运行课上的例子，以及 Netty 的例子，分析相关现象。
 **6.（必做）**写一段代码，使用 HttpClient 或 OkHttp 访问 [ http://localhost:8801 ](http://localhost:8801/)，代码提交到 GitHub
 
+~~~javascript
+// 服务端
+public class HttpServer01 {
+    public static void main(String[] args) throws IOException {
+        ServerSocket serverSocket = new ServerSocket(8081);
+        while (true){
+            Socket socket = serverSocket.accept();
+            service(socket);
+        }
+
+    }
+    public static void service(Socket socket){
+        try {
+            PrintWriter printWriter = new PrintWriter(socket.getOutputStream(),true);
+            printWriter.println("HTTP/1.0 200 OK");
+            printWriter.println("Content-Type:text/html;charset=utf-8");
+            String body = "Hello,nio1";
+            System.out.println("Hello,nio1");
+            printWriter.println("Content-Length："+body.getBytes().length);
+            printWriter.println();
+            printWriter.write(body);
+            printWriter.close();
+            socket.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+// 客户端
+// connection reset问题 待解决
+public class TestOkHttp {
+    public static void main(String[] args) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        String url = "http://localhost:8081";
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+        Response response = client.newCall(request).execute();
+        String text = response.body().string();
+        System.out.println(url + ": \n" + text);
+        client = null;
+    }
+}
+~~~
+

@@ -14,12 +14,10 @@ public class HttpServer01 {
         }
 
     }
-
-
     public static void service(Socket socket){
         try {
             PrintWriter printWriter = new PrintWriter(socket.getOutputStream(),true);
-            printWriter.println("HTTP/1.1 200 OK");
+            printWriter.println("HTTP/1.0 200 OK");
             printWriter.println("Content-Type:text/html;charset=utf-8");
             String body = "Hello,nio1";
             System.out.println("Hello,nio1");
@@ -32,6 +30,5 @@ public class HttpServer01 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
