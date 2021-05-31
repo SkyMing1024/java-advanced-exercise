@@ -80,5 +80,7 @@ public static void main(String[] args) throws InterruptedException {
 **5.（选做）**请思考: 还有哪些跟并发类似 / 有关的场景和问题，有哪些可以借鉴的解决 办法。
 **6.（必做）**把多线程和并发相关知识梳理一遍，画一个脑图，截图上传到 GitHub 上。 可选工具:xmind，百度脑图，wps，MindManage，或其他。
 
+如果图片没有加载请点击：[思维导图](https://github.com/SkyMing1024/java-advanced-exercise/blob/main/Homework/week04(concurrency)/concurrent.png)
+
 ![](concurrent.png)
 
