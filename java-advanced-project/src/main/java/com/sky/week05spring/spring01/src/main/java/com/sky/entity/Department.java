@@ -1,6 +1,6 @@
-package entity;
+package com.sky.entity;
 
-public class Departments {
+public class Department {
     int deptNo;
     String deptNames;
 
@@ -28,3 +28,4 @@ public class Departments {
                 '}';
     }
 }
+

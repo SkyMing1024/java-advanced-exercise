@@ -1,4 +1,4 @@
-package entity;
+package com.sky.entity;
 
 public class Employees {
 
@@ -69,3 +69,4 @@ public class Employees {
                 '}';
     }
 }
+
