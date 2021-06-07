@@ -9,5 +9,23 @@
         <property name="lastName" value="Jordan"/>
     </bean>
 
+    <bean id="student2" class="com.sky.entity.Student">
+        <property name="firstName" value="Kobe"/>
+        <property name="lastName" value="Bryant"/>
+    </bean>
+
+    <bean id="klass1" class="com.sky.entity.Klass">
+        <property name="student" ref="studentByXml"></property>
+        <property name="studentList">
+            <list>
+                <ref bean="studentByXml"/>
+                <ref bean="student2"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="school1" class="com.sky.entity.School">
+        <property name="klassList" ref="klass1"></property>
+    </bean>
     <context:component-scan base-package="com.sky"/>
 </beans>
