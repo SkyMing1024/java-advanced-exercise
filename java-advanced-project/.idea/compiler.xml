@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring01" />
-        <module name="java-advanced-project" />
       </profile>
     </annotationProcessing>
   </component>
