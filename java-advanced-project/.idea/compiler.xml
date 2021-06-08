@@ -7,7 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="my-autoconfig" />
         <module name="spring01" />
+        <module name="my-starter" />
         <module name="springboot01" />
       </profile>
     </annotationProcessing>

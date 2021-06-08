@@ -12,6 +12,8 @@ import java.util.List;
 @Data
 @ToString
 public class School {
+    String schoolName;
+
     List<Klass> klassList = new ArrayList<>();
 
     public void start() {
