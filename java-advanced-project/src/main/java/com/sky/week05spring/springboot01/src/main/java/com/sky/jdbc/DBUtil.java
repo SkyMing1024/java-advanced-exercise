@@ -48,7 +48,6 @@ public class DBUtil {
         }
     }
 
-
     public static HikariDataSource getDataSource(){
         HikariConfig config = new HikariConfig();
         config.setDriverClassName(driver);

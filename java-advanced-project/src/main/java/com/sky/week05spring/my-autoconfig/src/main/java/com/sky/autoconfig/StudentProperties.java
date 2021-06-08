@@ -7,7 +7,6 @@ public class StudentProperties {
     String firstName;
     String lastName;
     int age;
-
     public String getFirstName() {
         return firstName;
     }

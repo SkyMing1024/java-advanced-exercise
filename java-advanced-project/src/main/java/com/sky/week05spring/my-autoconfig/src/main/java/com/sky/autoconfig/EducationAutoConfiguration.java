@@ -12,23 +12,18 @@ import org.springframework.context.annotation.Bean;
 @Slf4j
 @EnableConfigurationProperties({StudentProperties.class,KlassProperties.class,SchoolProperties.class})
 public class EducationAutoConfiguration {
-
     @Autowired
     StudentProperties properties;
-
     @Autowired
     KlassProperties klassProperties;
-
     @Autowired
     SchoolProperties schoolProperties;
-
     @Bean
     public Student student(){
         log.info("装载student");
         Student student = new Student(properties.firstName, properties.lastName, properties.age);
         return student;
     }
-
     @Bean
     @ConditionalOnClass(Student.class)
     public Klass klass(){
@@ -38,7 +33,6 @@ public class EducationAutoConfiguration {
         klass.setStudent(klassProperties.getStudent());
         return klass;
     }
-
     @Bean
     @ConditionalOnClass(Klass.class)
     public School school(){
@@ -47,5 +41,4 @@ public class EducationAutoConfiguration {
         school.setSchoolName(schoolProperties.schoolName);
         return school;
     }
-
 }
