@@ -7,9 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="my-autoconfig" />
         <module name="spring01" />
-        <module name="java-advanced-project" />
+        <module name="my-starter" />
+        <module name="springboot01" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="week05spring" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot01" options="-parameters" />
+      <module name="week05spring" options="-parameters" />
+    </option>
   </component>
 </project>

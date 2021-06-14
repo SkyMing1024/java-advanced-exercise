@@ -4,6 +4,11 @@ public class Department {
     int deptNo;
     String deptNames;
 
+    public Department(int deptNo, String deptNames) {
+        this.deptNo = deptNo;
+        this.deptNames = deptNames;
+    }
+
     public int getDeptNo() {
         return deptNo;
     }
