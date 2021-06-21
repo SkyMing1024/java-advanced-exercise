@@ -1,19 +1,16 @@
 package com.sky.util;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.*;
 
-public class DBUtil {
+public class DBUtils {
     private static final String driver="com.mysql.cj.jdbc.Driver";
-    private static final String url="jdbc:mysql://localhost:3306/ry";
+    private static final String url="jdbc:mysql://localhost:3306/test_sql";
     private static final String name="root";
     private static final String pwd="root";
     private static Connection connection = null;
     private static PreparedStatement stmt;
     private static ResultSet rs;
-    private static HikariDataSource dataSource = null;
 
     static {
         try {
@@ -45,17 +42,6 @@ public class DBUtil {
         } catch (SQLException e) {
             System.err.println("资源释放发生异常");
         }
-    }
-
-    public static HikariDataSource getDataSource(){
-        HikariConfig config = new HikariConfig();
-        config.setDriverClassName(driver);
-        config.setJdbcUrl(url);
-        config.setUsername(name);
-        config.setPassword(pwd);
-
-        dataSource = new HikariDataSource(config);
-        return dataSource;
     }
 
 }
