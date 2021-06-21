@@ -11,6 +11,7 @@
         <module name="spring01" />
         <module name="my-starter" />
         <module name="springboot01" />
+        <module name="mysql-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
