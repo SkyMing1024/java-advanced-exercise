@@ -1,19 +1,16 @@
 package com.sky.testinsert;
 
 import com.sky.util.DBUtils;
-import com.sky.util.DBUtils;
-import org.apache.http.client.utils.DateUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
-        final int num = 1;
+        final int num = 5;
         Connection connection = DBUtils.getConnection();
         connection.setAutoCommit(false);
         String sql = "INSERT INTO  t_order (user_id,sum_price,purchase_price,create_time,order_status)\n" +
@@ -37,7 +34,7 @@ public class Main {
         connection.commit();
         DBUtils.close();
 
-        long diff =  (System.currentTimeMillis() - start)/1000;
+        long diff =  (System.currentTimeMillis() - start);
         System.out.println(num+"条插入完毕，用时：" + diff + "s");
     }
 }

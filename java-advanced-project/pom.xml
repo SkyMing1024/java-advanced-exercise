@@ -24,7 +24,7 @@
     <modules>
         <module>src/main/java/com/sky/week05spring/my-autoconfig</module>
         <module>src/main/java/com/sky/week05spring/my-starter</module>
-        <module>src/main/java/com/sky/week07mysql</module>
+        <module>src/main/java/com/sky/week07mysql/mysql-demo01</module>
     </modules>
 
     <dependencies>

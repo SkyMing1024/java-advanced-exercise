@@ -9,12 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="my-autoconfig" />
         <module name="spring01" />
+        <module name="mysql-demo01" />
         <module name="my-starter" />
         <module name="springboot01" />
-        <module name="mysql-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mysql-demo" target="8" />
       <module name="week05spring" target="1.8" />
     </bytecodeTargetLevel>
   </component>
