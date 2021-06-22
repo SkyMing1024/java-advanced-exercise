@@ -17,13 +17,12 @@
 
 ```java
 		if (i%100==0){
-                System.out.println(i+" : "+i/100);
                 statement.executeBatch();
                 statement.clearParameters();
            }
+// 结果
+1000000条插入完毕，用时：22s
 ```
-
-
 
 ~~~java
 public static void main(String[] args) throws SQLException {
@@ -53,6 +52,10 @@ public static void main(String[] args) throws SQLException {
     
 // rewriteBatchedStatements=true
 1000000条插入完毕，用时：53s
+
+// rewriteBatchedStatements=true，每1000条数据执行一次插入
+1000000条插入完毕，用时：25s
+    
 ~~~
 
 方式二：多线程执行
@@ -89,6 +92,8 @@ public static void main(String[] args) throws InterruptedException {
     }
 ~~~
 
+有提升，但还是比较慢，可能是因为创建线程本身比较耗资源
+
 ~~~java
 // 结果
 Thread-1开始插入数据
@@ -103,9 +108,7 @@ Thread-7插入100000条数据完毕
 10个子线程插入完毕，用时：32s
 ~~~
 
-![image-20210622112439664](E:\JavaCamp\java-advanced-exercise\Homework\week07\image-20210622112439664.png)
-
-
+![image-20210622134256344](image-20210622112439664.png)
 
 **4.（选做）**使用不同的索引或组合，测试不同方式查询效率  
 **5.（选做）**调整测试数据，使得数据尽量均匀，模拟 1 年时间内的交易，计算一年的销售报表：销售总额，订单数，客单价，每月销售 量，前十的商品等等（可以自己设计更多指标）  
@@ -114,6 +117,9 @@ Thread-7插入100000条数据完毕
 **8.（选做）**配置一遍异步复制，半同步复制、组复制  
 **9.（必做）**读写分离 - 动态切换数据源版本 1.0  
 **10.（必做）**读写分离 - 数据库框架版本 2.0  
+
+这部分还没搞定，我再看看视频
+
 **11.（选做）**读写分离 - 数据库中间件版本 3.0  
 **12.（选做）**配置 MHA，模拟 master 宕机  
 **13.（选做）**配置 MGR，模拟 master 宕机  
