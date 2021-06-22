@@ -12,7 +12,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sky/week05spring/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sky/week05spring/springboot01/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sky/week07mysql/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sky/week07mysql/springboot-mysql/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/src/main/java/com/sky/week07mysql/mysql-demo01/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
