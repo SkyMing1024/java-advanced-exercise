@@ -10,16 +10,20 @@
         <module name="my-autoconfig" />
         <module name="spring01" />
         <module name="my-starter" />
+        <module name="springboot-mysql" />
         <module name="springboot01" />
-        <module name="mysql-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mysql-demo" target="8" />
+      <module name="mysql-demo01" target="1.8" />
       <module name="week05spring" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="mysql-demo01" options="-parameters" />
+      <module name="springboot-mysql" options="-parameters" />
       <module name="springboot01" options="-parameters" />
       <module name="week05spring" options="-parameters" />
     </option>
