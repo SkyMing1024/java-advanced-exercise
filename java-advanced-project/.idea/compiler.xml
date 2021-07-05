@@ -7,11 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="my-autoconfig" />
-        <module name="spring01" />
         <module name="my-starter" />
+        <module name="rpcfx-demo-provider" />
         <module name="springboot-mysql" />
+        <module name="rpcfx-demo-consumer" />
+        <module name="rpcfx-demo-api" />
+        <module name="rpcfx-core" />
         <module name="springboot01" />
+        <module name="spring01" />
+        <module name="my-autoconfig" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +27,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mysql-demo01" options="-parameters" />
+      <module name="rpcfx-core" options="-parameters" />
+      <module name="rpcfx-demo-api" options="-parameters" />
+      <module name="rpcfx-demo-consumer" options="-parameters" />
+      <module name="rpcfx-demo-provider" options="-parameters" />
       <module name="springboot-mysql" options="-parameters" />
       <module name="springboot01" options="-parameters" />
       <module name="week05spring" options="-parameters" />
