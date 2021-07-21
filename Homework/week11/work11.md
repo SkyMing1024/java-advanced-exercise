@@ -21,6 +21,36 @@
 **8.（必做）**基于 Redis 封装分布式数据操作：
 
 - 在 Java 中实现一个简单的分布式锁；
+
+  方式一：setnx+expire
+
+  ```java
+  	public static boolean tryAcquireLock(String key,String requset,int timeout) {
+          Long result = jedis.setnx(key, requset);
+          // result = 1时，设置成功，否则设置失败
+          if (result == 1L) {
+              return jedis.expire(key, timeout) == 1L;
+          } else {
+              return false;
+          }
+      }
+  ```
+
+  方式二：结合lua脚本
+
+  ```java
+  public boolean tryAcquireLockWithLua(String key, String id, int seconds) {
+          String lua = "if redis.call('setnx',KEYS[1],ARGV[1]) == 1 then redis.call('expire',KEYS[1],ARGV[2]) return 1 else return 0 end";
+          List<String> keys = new ArrayList<>();
+          List<String> values = new ArrayList<>();
+          keys.add(key);
+          values.add(id);
+          values.add(String.valueOf(seconds));
+          Object result = jedis.eval(lua, keys, values);
+          return result.equals(1L);
+      }
+  ```
+
 - 在 Java 中实现一个分布式计数器，模拟减库存。
 
 **9.（必做）**基于 Redis 的 PubSub 实现订单异步处理
