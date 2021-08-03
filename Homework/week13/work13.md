@@ -1,5 +1,54 @@
 **1.（必做）**搭建一个 3 节点 Kafka 集群，测试功能和性能；实现 spring kafka 下对 kafka 集群的操作，将代码提交到 github。
 
+基于docker搭建kafka集群：
+
+1. 安装运行zookeeper:
+
+   ```bash
+   //拉取镜像
+   docker pull wurstmeister/zookeeper
+   // 创建并启动容器
+   docker run -d --name zookeeper01 -p 2181:2181 -t wurstmeister/zookeeper
+   ```
+
+   
+
+2. 安装运行kafka：
+
+   ```bash
+   // 拉取镜像
+   
+   // 创建3个kafka节点，并注册到zookeeper
+   // kafka0
+   docker run -d --name kafka0 \
+   -p 9092:9092 \
+   -e KAFKA_BROKER_ID=0 \
+   -e KAFKA_ZOOKEEPER_CONNECT=192.168.0.137:2181 \
+   -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.0.137:9092 \
+   -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092 \
+   -t wurstmeister/kafka
+   // kafka1
+   docker run -d --name kafka1 \
+   -p 9093:9093 \
+   -e KAFKA_BROKER_ID=1 \
+   -e KAFKA_ZOOKEEPER_CONNECT=192.168.0.137:2181 \
+   -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.0.137:9093 \
+   -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9093 \
+   -t wurstmeister/kafka
+   // kafka2
+   docker run -d --name kafka2 \
+   -p 9094:9094 \
+   -e KAFKA_BROKER_ID=2 \
+   -e KAFKA_ZOOKEEPER_CONNECT=192.168.0.137:2181 \
+   -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.0.137:9094 \
+   -e KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9094 \
+   -t wurstmeister/kafka
+   
+   
+   ```
+
+3. 
+
 **2.（选做）**安装 kafka-manager 工具，监控 kafka 集群状态。
 
 **3.（挑战☆）**演练本课提及的各种生产者和消费者特性。
