@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sky/week07mysql/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sky/week07mysql/springboot-mysql/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sky/week09rpc/rpc01/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sky/week13/kafka-demo/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -8,14 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="my-starter" />
-        <module name="rpcfx-demo-provider" />
+        <module name="kafka-demo" />
+        <module name="my-autoconfig" />
         <module name="springboot-mysql" />
+        <module name="spring01" />
         <module name="rpcfx-demo-consumer" />
-        <module name="rpcfx-demo-api" />
         <module name="rpcfx-core" />
         <module name="springboot01" />
-        <module name="spring01" />
-        <module name="my-autoconfig" />
+        <module name="rpcfx-demo-provider" />
+        <module name="rpcfx-demo-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
