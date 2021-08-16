@@ -7,5 +7,9 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week09rpc/rpc01/rpcfx-demo-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week09rpc/rpc01/rpcfx-demo-consumer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week09rpc/rpc01/rpcfx-demo-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week11cache/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week11cache/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week13/kafka-demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/sky/week13/kafka-demo/src/main/resources" charset="UTF-8" />
   </component>
 </project>
